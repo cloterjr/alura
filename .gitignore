@@ -12,8 +12,6 @@
 hs_err_pid*
 
 # Java #
-.classpath
-.project
 .settings/
 
 # Maven #
