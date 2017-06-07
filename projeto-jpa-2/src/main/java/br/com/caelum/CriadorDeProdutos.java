@@ -33,36 +33,40 @@ public class CriadorDeProdutos {
 		template.execute(new TransactionCallbackWithoutResult() {
 			@Override
 			protected void doInTransactionWithoutResult(TransactionStatus status) {
-			
-				Loja casaDoCodigo = new Loja();
-				casaDoCodigo.setNome("Casa do Código");
-				
-				casaDoCodigo = em.find(Loja.class, 1);
+						
+				Loja casaDoCodigo = em.find(Loja.class, 1);
 				
 				if(casaDoCodigo == null)
+				{
+					casaDoCodigo = new Loja();
+					casaDoCodigo.setNome("Casa do Código");
 					em.persist(casaDoCodigo);
-				
-				Loja musicalAlegre = new Loja();
-				musicalAlegre.setNome("Musical Alegre");
-				
-				musicalAlegre = em.find(Loja.class, 2);
+				}
+							
+				Loja musicalAlegre = em.find(Loja.class, 2);
 				
 				if(musicalAlegre == null)
+				{
+					musicalAlegre = new Loja();
+					musicalAlegre.setNome("Musical Alegre");
 					em.persist(musicalAlegre);
-				
-				Categoria tecnologia = new Categoria("Tecnologia");
-				
-				tecnologia = em.find(Categoria.class, 1);
+				}
+							
+				Categoria tecnologia = em.find(Categoria.class, 1);
 				
 				if(tecnologia == null)
+				{
+					tecnologia = new Categoria("Tecnologia");
 					em.persist(tecnologia);
+				}
 				
-				Categoria musica = new Categoria("Música");
-				
-				musica = em.find(Categoria.class, 2);
+				Categoria musica = em.find(Categoria.class, 2);
 				
 				if(musica == null)
+				{
+					musica = new Categoria("Música");
 					em.persist(musica);
+				}
 				
 				Produto cursoDeViolao = em.find(Produto.class, 1);
 				
