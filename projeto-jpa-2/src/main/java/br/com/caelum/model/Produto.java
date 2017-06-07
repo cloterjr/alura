@@ -99,4 +99,9 @@ public class Produto {
 		return loja;
 	}
 
+	public void adicionarCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
+
 }
